@@ -1,0 +1,27 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-cli": "^4.9.2",
+    "webpack": "^5.69.1",
+    "webpack-dev-server": "^4.0.0-rc.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EunjoungAhn/webpack-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EunjoungAhn/webpack-test/issues"
+  },
+  "homepage": "https://github.com/EunjoungAhn/webpack-test#readme"
+}
