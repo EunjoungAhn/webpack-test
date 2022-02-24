@@ -4,7 +4,10 @@
 
 //노드js에서 쓰는 절대경로
 const path = require('path');
+//서버 설정
 const HtmlPlugin = require('html-webpack-plugin');
+//사진 자동 번들링 플러그인
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports ={
   //진입점 파일을 설정해야 하는데
@@ -26,6 +29,13 @@ module.exports ={
   plugins: [
     new HtmlPlugin({
       template: './index.html'
+    }),
+    new CopyPlugin({
+      //from 어디에 있는 폴더의 경로를 복사할 것이냐?
+      // { } 배열이라는 것은 여러개의 경로를 입력 할 수 있다.
+      patterns: [
+        { from: 'static'}
+      ]
     })
   ],
 
