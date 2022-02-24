@@ -4,6 +4,7 @@
 
 //노드js에서 쓰는 절대경로
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports ={
   //진입점 파일을 설정해야 하는데
@@ -19,5 +20,17 @@ module.exports ={
     //filename: 'main.js',
     //기존에 만들어진 파일을 제거하고 다시 복사
     clean: true
+  },
+
+  //번들링 후 결과물의 처리 방식 등 다양한 플러그인들을 설정하는 옵션
+  plugins: [
+    new HtmlPlugin({
+      template: './index.html'
+    })
+  ],
+
+  devServer: {
+    host: 'localhost'
   }
+
 }
