@@ -25,6 +25,22 @@ module.exports ={
     clean: true
   },
 
+//선언하는 위치 순서는 중요하지 않다.
+  module:{
+    rules: [
+      {
+        test: /\.css$/,
+        use:[//패키지들
+          //2.해석된 css를 html style에 삽입해 주는 것을 한다.
+          'style-loader',
+          //1.js파일에서 css를 해석하기 위해 설정한 것
+          'css-loader'
+        ]
+      }
+    ]
+  },
+
+
   //번들링 후 결과물의 처리 방식 등 다양한 플러그인들을 설정하는 옵션
   plugins: [
     new HtmlPlugin({
