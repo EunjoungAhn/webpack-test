@@ -29,12 +29,23 @@ module.exports ={
   module:{
     rules: [
       {
-        test: /\.css$/,
+        //.scss와 맞는 해당하는 파일을 매칭하는 것이다.
+        test: /\.scss$/,
         use:[//패키지들
           //2.해석된 css를 html style에 삽입해 주는 것을 한다.
           'style-loader',
           //1.js파일에서 css를 해석하기 위해 설정한 것
-          'css-loader'
+          'css-loader',
+          //순서가 중요하므로 여기 적는다.
+          'postcss-loader',
+          //css가 동작하기 전에 scss-loader가 동작하도록 한다.
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.js$/,
+        use: [
+          'babel-loader'
         ]
       }
     ]
